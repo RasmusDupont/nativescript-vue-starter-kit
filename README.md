@@ -17,3 +17,14 @@ tns debug <platform> --bundle
 # Build, watch for changes and run the application
 tns run <platform> --bundle
 ```
+
+## Technology Stack
+
+### Vue.js
+
+https://vuejs.org/
+
+### Nativescript
+
+https://nativescript-vue.org/
+https://www.nativescript.org/
