@@ -1,6 +1,6 @@
 # NativeScript Vue Starter Kit
 
-> A NativeScript Vue starter kit to smooth out the learning curve and speed up application development 
+> A NativeScript Vue starter kit to smooth out the learning curve and speed up application development time
 
 ## Usage
 
