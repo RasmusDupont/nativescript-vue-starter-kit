@@ -20,11 +20,25 @@ tns run <platform> --bundle
 
 ## Technology Stack
 
+### NativeScript
+
+https://nativescript-vue.org/
+https://www.nativescript.org/
+
 ### Vue.js
 
 https://vuejs.org/
 
-### Nativescript
+### State Management
 
-https://nativescript-vue.org/
-https://www.nativescript.org/
+https://vuex.vuejs.org/
+
+Vuex is used for state management in the application
+
+### Routing
+
+https://nativescript-vue.org/en/docs/routing/manual-routing/
+
+Vue Router is currently unsupported for NativeScript Vue, routing is therefore done manually (as recommended).
+
+
