@@ -23,18 +23,18 @@
 }
 
 .inputWrapper {
-    border-bottom-color: white;
+    border-bottom-color: #dcedff;
     border-bottom-width: 2;
     margin-top: 30;
 }
 
 .input {
-    color: white;
+    color: #dcedff;
     margin-left: 5;
 }
 
 .label {
-    color: white;
+    color: #dcedff;
 }
 
 .icon {
@@ -43,10 +43,10 @@
 }
 
 .primaryButton {
-    color: white;
+    color: #dcedff;
     font-weight: bold;
     border-radius: 25;
-    border-color: white;
+    border-color: #dcedff;
     border-width: 2;
     padding-top: 15;
     padding-bottom: 15;
@@ -54,4 +54,18 @@
     letter-spacing: 0.1;
     margin-top: 35;
     font-size: 14;
+}
+
+.component-title {
+    margin-top: 40;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 0.6;
+    font-weight: bold;
+    font-size: 12;
+}
+
+.miscButtons {
+    margin-top: 35;
+    color: #dcedff;
 }

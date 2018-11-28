@@ -28,9 +28,13 @@
 </template>
 
 <script>
-import * as Facebook from "nativescript-facebook"
-import alert from '~/utils/alert'
+import * as Facebook from 'nativescript-facebook'
 import {connectionType, getConnectionType} from 'tns-core-modules/connectivity'
+
+import alert from '~/utils/alert'
+import validEmail from '~/utils/validEmail'
+
+import Register from './../register/Register'
 
 export default {
     data() {
@@ -43,25 +47,60 @@ export default {
     },
     methods: {
         login() {
+            if(getConnectionType() === connectionType.none) {
+                alert("The app requires an internet connection to login.")
+                return
+            }
 
+            if(validEmail(this.input.email) == true && this.input.password != null) {
+                this.$store.dispatch("auth/login", this.input).then(this.$navigateTo(Main))
+                .catch((error) => {
+                    alert(error)
+                })
+            } else {
+                alert("Please enter a valid e-mail and your password")
+            }
         },
         loginWithFacebook() {
+            if(getConnectionType() === connectionType.none) {
+                alert("The app requires an internet connection to login.")
+                return
+            }
 
+            Facebook.login((error, fbData) => {
+                if (error) {
+                    alert(error.message)
+                } else {
+                    this.$store.dispatch("auth/loginWithFacebook", fbData.token).then(this.$navigateTo(Main))
+                }
+            })
         },
         register() {
-
+            this.$navigateTo(Register)
         },
         forgotPassword() {
+            if(getConnectionType() === connectionType.none) {
+                alert("The app requires an internet connection to login.")
+                return
+            }
 
+            prompt({
+                title: "Forgot password",
+                message: "Enter your e-mail address, and you will recieve a password reset if it exists in our system.",
+                okButtonText: "OK",
+                cancelButtonText: "Cancel",
+                defaultText: ""
+            }).then(result => {
+                console.log('Dialog result: ${result.result}, text: ${result.text}')
+            })
         }
     }
 }
-
 </script>
 
 <style>
     .bottom-gradient {
-        background: linear-gradient(to bottom, #41B883, #34495E);
+        background: linear-gradient(to bottom, #41B883, #b74f6f);
     }
 
     .logo {
@@ -72,7 +111,7 @@ export default {
 
     .login-title {
         margin-top: 15;
-        color: white;
+        color: #dcedff;
         text-transform: uppercase;
         letter-spacing: 1.2;
         font-weight: bold;
@@ -81,7 +120,7 @@ export default {
 
     .facebookLoginButton {
         border-radius: 25;
-        border-color: white;
+        border-color: #dcedff;
         border-width: 2;
         margin-top: 25;
         background-color: #3b5998;
@@ -90,15 +129,10 @@ export default {
     }
 
     .facebookLabel {
-        color: white;
+        color: #dcedff;
         font-weight: bold;
         text-transform: uppercase;
         letter-spacing: 0.1;
         font-size: 14;
-    }
-
-    .miscButtons {
-        margin-top: 35;
-        color: white;
     }
 </style>

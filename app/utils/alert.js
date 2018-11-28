@@ -2,7 +2,7 @@ import * as dialogsModule from "ui/dialogs"
 
 export default function alert(message) {
     return dialogsModule.alert({
-        title: "Yome",
+        title: "STARTER KIT",
         okButtonText: "OK",
         message: message
     })
