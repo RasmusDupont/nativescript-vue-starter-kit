@@ -5,6 +5,9 @@
 ## Usage
 
 ``` bash
+# Install NativeScript Vue
+https://nativescript-vue.org/en/docs/getting-started/installation/
+
 # Install dependencies
 npm install
 
