@@ -35,6 +35,7 @@ import alert from '~/utils/alert'
 import validEmail from '~/utils/validEmail'
 
 import Register from './../register/Register'
+import TabiviewLayout from '~/components/layout/TabviewLayout'
 
 export default {
     data() {
