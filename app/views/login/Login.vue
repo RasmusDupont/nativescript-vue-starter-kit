@@ -54,7 +54,7 @@ export default {
             }
 
             if(validEmail(this.input.email) == true && this.input.password != null) {
-                this.$store.dispatch("auth/login", this.input).then(this.$navigateTo(Main))
+                this.$store.dispatch("auth/login", this.input).then(this.$navigateTo(TabiviewLayout))
                 .catch((error) => {
                     alert(error)
                 })

@@ -39,7 +39,6 @@ const actions = {
   },
   async login(store, user) {  
     try {
-      //not working
       const token = await AuthService.authenticate(user)
       store.commit('SET_AUTH', token)
     } catch {
