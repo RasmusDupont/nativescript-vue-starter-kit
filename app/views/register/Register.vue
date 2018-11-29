@@ -27,6 +27,8 @@ import {connectionType, getConnectionType} from 'tns-core-modules/connectivity'
 
 import alert from './../../utils/alert'
 
+import TabiviewLayout from '~/components/layout/TabviewLayout'
+
 export default {
     data() {
         return {
@@ -45,8 +47,7 @@ export default {
             }
 
             if(this.validEmail(this.input.email) == true && this.input.password != null && this.passwordIdentical(this.input.password, this.input.repeatPassword)) {
-                //this.$navigateTo(Main)
-                alert("OK")
+                this.$navigateTo(TabiviewLayout, { clearHistory: true })
             } else {
                 alert("Invalid e-mail or passwords not identical.")
             }

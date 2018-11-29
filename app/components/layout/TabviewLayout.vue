@@ -1,7 +1,7 @@
 <template>
     <Page class="bottom-gradient">
         <ActionBar actionBarHidden="true" backgroundSpanUnderStatusBar="true"/>
-        <TabView>
+        <TabView selectedTabTextColor="#41B883" tabBackgroundColor="#34495e" tabTextColor="#dcedff" androidTabsPosition="bottom">
             <TabViewItem title="Home">
                 <Home></Home>
             </TabViewItem>
@@ -11,9 +11,6 @@
             <TabViewItem title="Settings">
                 <Settings></Settings>
             </TabViewItem>
-            <TabViewItem title="About">
-                <About></About>
-            </TabViewItem>
         </TabView>
     </Page>
 </template>
@@ -22,14 +19,12 @@
 import Home from '~/views/home/home'
 import Features from '~/views/features/features'
 import Settings from '~/views/settings/settings'
-import About from '~/views/about/about'
 
 export default {
     components: {
         Home,
         Features,
-        Settings,
-        About
+        Settings
     },
     data() {
       return {
