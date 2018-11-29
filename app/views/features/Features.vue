@@ -1,5 +1,9 @@
 <template>
-    <Label text="oof"/>
+    <StackLayout alignItems="center">
+        <Label class="component-title" text="features" horizontalAlignment="center"/>
+        <StackLayout alignItems="center">
+        </StackLayout>
+    </StackLayout>
 </template>
 
 <script>

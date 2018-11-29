@@ -1,13 +1,15 @@
 <template>
-    <TabviewLayout></TabviewLayout>
+    <Login></Login>
 </template>
 
 <script>
 import TabviewLayout from './layout/TabviewLayout'
+import Login from '~/views/login/Login'
 
   export default {
     components: {
-        TabviewLayout
+      Login,
+      TabviewLayout
     }
   }
 </script>

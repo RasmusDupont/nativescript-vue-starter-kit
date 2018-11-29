@@ -33,13 +33,11 @@ const getters = {
 
 //action = business logic, can be asynch
 const actions = {
-  //TODO: verify that logout works
   logout(store) {
     store.commit('REMOVE_AUTH')
   },
   async login(store, user) {  
     try {
-      //not working
       const token = await AuthService.authenticate(user)
       store.commit('SET_AUTH', token)
     } catch {
@@ -51,6 +49,14 @@ const actions = {
       store.commit('SET_AUTH', token)
     } catch {
       throw new Error("Auth error")
+    }
+  },
+  async register(store, user) {
+    try {
+      const token = await AuthService.register(user)
+      store.commit('SET_AUTH', token)
+    } catch {
+      throw new Error("Register error")
     }
   },
   //use getters for the token here
