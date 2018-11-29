@@ -54,7 +54,7 @@ export default {
             }
 
             if(validEmail(this.input.email) == true && this.input.password != null) {
-                this.$store.dispatch("auth/login", this.input).then(this.$navigateTo(TabiviewLayout))
+                this.$store.dispatch("auth/login", this.input).then(this.$navigateTo(TabiviewLayout, { clearHistory: true }))
                 .catch((error) => {
                     alert(error)
                 })
@@ -100,10 +100,6 @@ export default {
 </script>
 
 <style>
-    .bottom-gradient {
-        background: linear-gradient(to bottom, #41B883, #b74f6f);
-    }
-
     .logo {
         margin-top: 40;
         height: 100;

@@ -1,18 +1,15 @@
 <template>
-    <Page>
-        <ActionBar title="Welcome to NativeScript-Vue!" android:flat="true"/>
-        <TabView android:tabBackgroundColor="#53ba82"
-                 android:tabTextColor="#c4ffdf"
-                 android:selectedTabTextColor="#ffffff"
-                 androidSelectedTabHighlightColor="#ffffff">
+    <Page class="bottom-gradient">
+        <ActionBar actionBarHidden="true" backgroundSpanUnderStatusBar="true"/>
+        <TabView>
             <TabViewItem title="Home">
                 <Home></Home>
             </TabViewItem>
             <TabViewItem title="Features">
                 <Features></Features>
             </TabViewItem>
-            <TabViewItem title="Profile">
-                <Profile></Profile>
+            <TabViewItem title="Settings">
+                <Settings></Settings>
             </TabViewItem>
             <TabViewItem title="About">
                 <About></About>
@@ -24,14 +21,14 @@
 <script>
 import Home from '~/views/home/home'
 import Features from '~/views/features/features'
-import Profile from '~/views/profile/profile'
+import Settings from '~/views/settings/settings'
 import About from '~/views/about/about'
 
 export default {
     components: {
         Home,
         Features,
-        Profile,
+        Settings,
         About
     },
     data() {
@@ -41,16 +38,6 @@ export default {
 }
 </script>
 
-<style scoped>
-    ActionBar {
-        background-color: #53ba82;
-        color: #ffffff;
-    }
+<style>
 
-    .message {
-        vertical-align: center;
-        text-align: center;
-        font-size: 20;
-        color: #333333;
-    }
 </style>
