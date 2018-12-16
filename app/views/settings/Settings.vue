@@ -1,7 +1,8 @@
 <template>
     <StackLayout alignItems="center">
         <Label class="component-title" text="settings" horizontalAlignment="center"/>
-        <StackLayout alignItems="center">
+        <StackLayout class="form" alignItems="center">
+            <Label class="label" text="Press button to sign out!" textWrap="true"/>
             <Button class="primaryButton" text="Logout" @tap="logout"/>
         </StackLayout>
     </StackLayout>
