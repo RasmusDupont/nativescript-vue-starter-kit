@@ -72,7 +72,7 @@ export default {
                 if (error) {
                     alert(error.message)
                 } else {
-                    this.$store.dispatch("auth/loginWithFacebook", fbData.token).then(this.$navigateTo(Main))
+                    this.$store.dispatch("auth/loginWithFacebook", fbData.token).then(this.$navigateTo(TabiviewLayout, { clearHistory: true }))
                 }
             })
         },
