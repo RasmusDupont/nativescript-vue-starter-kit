@@ -6,6 +6,7 @@ import { init as FacebookInit } from 'nativescript-facebook'
 import './app.scss'
 
 Vue.prototype.$store = store
+Vue.registerElement("Mapbox", () => require("nativescript-mapbox").MapboxView)
 FacebookInit('490469378128814')
 
 if(TNS_ENV !== 'production') {
