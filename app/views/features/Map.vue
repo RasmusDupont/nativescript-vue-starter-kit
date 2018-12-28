@@ -1,11 +1,12 @@
 <template>
     <Page>
+        <ActionBar/>
         <GridLayout>
             <Mapbox
                 accessToken="pk.eyJ1IjoicmFzbXVzaXRvIiwiYSI6ImNqcHJhZjJhbDBsdnA0OG8yamM5ejU3cTMifQ.R-P528sDsEVw8g9jKQaYYw"
                 mapStyle="traffic_day"
-                latitude="37.7397"
-                longitude="-121.4252"
+                latitude="55.671775"
+                longitude="12.565166"
                 hideCompass="true"
                 zoomLevel="12"
                 showUserLocation="false"
@@ -30,12 +31,12 @@ export default {
         onMapReady(args) {
             args.map.addMarkers([
                 {
-                    lat: 37.7397,
-                    lng: -121.4252,
-                    title: "Tracy, CA",
-                    subtitle: "Home of The Polyglot Developer!",
+                    lat: 55.671775,
+                    lng: 12.565166,
+                    title: "Copenhagen",
+                    subtitle: "The capital of Denmark",
                     onCalloutTap: () => {
-                        utils.openUrl("https://www.thepolyglotdeveloper.com")
+                        utils.openUrl("https://en.wikipedia.org/wiki/Copenhagen")
                     }
                 }
             ])

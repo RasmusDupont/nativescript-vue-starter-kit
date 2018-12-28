@@ -7,7 +7,7 @@
         </StackLayout>
         <StackLayout class="form" alignItems="center">
             <Label class="label" text="This demonstrates how to use the map!" textWrap="true"/>
-            <Button class="primaryButton" text="Map" @tap="$navigateTo(Map)"/>
+            <Button class="primaryButton" text="Map" @tap="useMap"/>
         </StackLayout>
     </StackLayout>
 </template>
@@ -49,20 +49,7 @@ export default {
             }
         },
         useMap() {
-
-        },
-        onMapReady(args) {
-            args.map.addMarkers([
-                {
-                    lat: 37.7397,
-                    lng: -121.4252,
-                    title: "Tracy, CA",
-                    subtitle: "Home of The Polyglot Developer!",
-                    onCalloutTap: () => {
-                        utils.openUrl("https://www.thepolyglotdeveloper.com");
-                    }
-                }
-            ]);
+            this.$navigateTo(Map)
         }
     }
 }
